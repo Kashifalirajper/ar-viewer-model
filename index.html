@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>model-viewer</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web AR</title>
-    <!-- Import the component -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="stylesheet" href="style.css">
-</head>
+    
+    <!-- The following libraries and polyfills are recommended to maximize browser support -->
+    <!-- NOTE: you must adjust the paths as appropriate for your project -->
+    
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
 
+  </head> 
 <body>
-    <div class="demo">
-        <model-viewer
-        alt="Mera Robot"
-        src="Horse.glb" ar ar-modes="webxr scene-viewer quick-look"
-        skybox-image="neon_photostudio_4k.hdr"
-        seamless-poster shadow-intensity="1" camera-controls enable-pan
-        animation-name="Running"
-        autoplay
-        ar
-        ></model-viewer>
+  <div id="card">
+    <!-- All you need to put beautiful, interactive 3D content on your site: -->
+    <model-viewer src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?1542147958948"
+                  ios-src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.usdz?v=1569545377878"
+                  poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
+                  alt="A 3D model of an astronaut"
+                  shadow-intensity="1"
+                  camera-controls
+                  auto-rotate ar>
+    </model-viewer>
+    
+  </div>
+  
 
-    </div>
+  
+  
+  <!-- 💁 Include both scripts below to support all browsers! -->
 
-
+  <!-- Loads <model-viewer> for modern browsers: -->
+  <script type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
 </body>
-
 </html>
